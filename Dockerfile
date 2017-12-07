@@ -1,7 +1,7 @@
-FROM ffmpeg
+FROM debian
 
 RUN apt-get update && apt-get -qy install \
-  libraspberrypi-bin && \
+  libav-tools && \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root/
