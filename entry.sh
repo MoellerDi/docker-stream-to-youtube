@@ -31,7 +31,7 @@ avconv \
   -f s16le \
   -ac 2 \
   -i ${INPUT_AUDIO} \
-  -f h264 \
+  -f mjpeg \
   -i ${INPUT_VIDEO} \
   -vcodec ${INPUT_VCODEC} \
   -acodec ${INPUT_ACODEC} \
