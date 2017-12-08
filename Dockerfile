@@ -4,8 +4,9 @@ RUN apt-get update && apt-get -qy install \
   libav-tools && \
   rm -rf /var/lib/apt/lists/*
 
-COPY entry.sh	/root/
-RUN chmod +x /root/entry.sh
+WORKDIR /root/
+COPY entry.sh	.
+RUN chmod +x entry.sh
 
 ## --- ENV ---
 ENV \
@@ -14,4 +15,4 @@ ENV \
     INPUT_AUDIO=/dev/zero \
     INPUT_ACODEC=aac
 
-ENTRYPOINT ["/root/entry.sh"]
+ENTRYPOINT ["./entry.sh"]

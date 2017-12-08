@@ -1,13 +1,11 @@
 version: '2'
 services:
-  streaming-host5:
+  streaming-host:
     image: moellerdi/stream
     environment:
       INPUT_ACODEC: aac
       INPUT_AUDIO: /dev/zero
       INPUT_VCODEC: h264
       INPUT_VIDEO: http://octopi.local:8080/?action=stream
-    entrypoint:
-    - /entry.sh
     command:
     - <your-key>
