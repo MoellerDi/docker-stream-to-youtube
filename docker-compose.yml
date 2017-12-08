@@ -3,9 +3,14 @@ services:
   streaming-host:
     image: moellerdi/stream
     environment:
-      INPUT_ACODEC: aac
-      INPUT_AUDIO: /dev/zero
-      INPUT_VCODEC: h264
-      INPUT_VIDEO: http://octopi.local:8080/?action=stream
+      INPUT_AUDIO_STREAM: /dev/zero
+      INPUT_AUDIO_FORMAT: s16le
+
+      INPUT_VIDEO_STREAM: http://octopi.local:8080/?action=stream
+      INPUT_VIDEO_FORMAT: mjpeg
+
+      OUTPUT_ACODEC: aac
+      OUTPUT_VCODEC: h264
+
     command:
     - <your-key>
