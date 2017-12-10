@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -qy install \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root/
-COPY entry.sh	.
-RUN chmod +x entry.sh
+COPY entry.sh	./
+RUN chmod +x ./entry.sh
 
 ENTRYPOINT ["./entry.sh"]
